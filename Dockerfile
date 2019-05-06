@@ -1,7 +1,7 @@
 FROM majid7221/debian:stretch
 
 RUN set -ex \
-	&& apt-key --no-tty adv --keyserver ha.pool.sks-keyservers.net --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \
+	&& apt-key adv --no-tty --keyserver ha.pool.sks-keyservers.net --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 --no-tty \
 	&& echo "deb https://nginx.org/packages/mainline/debian/ stretch nginx" > /etc/apt/sources.list.d/nginx.list \
 	&& apt-get update \
 	&& apt-get install --no-install-recommends -y \
